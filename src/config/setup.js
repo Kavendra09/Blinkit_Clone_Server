@@ -15,8 +15,8 @@ export const admin = new AdminJS({
         listProperties: ["phone", "role", "isActivated"],
         filterProperties: ["phone", "role"],
         navigation: {
-          name: "Blinkit"
-        }
+          name: "Blinkit",
+        },
       },
     },
     {
@@ -25,8 +25,8 @@ export const admin = new AdminJS({
         listProperties: ["email", "role", "isActivated"],
         filterProperties: ["email", "role"],
         navigation: {
-          name: "Blinkit"
-        }
+          name: "Blinkit",
+        },
       },
     },
     {
@@ -35,45 +35,50 @@ export const admin = new AdminJS({
         listProperties: ["email", "role", "isActivated"],
         filterProperties: ["email", "role"],
         navigation: {
-          name: "Blinkit"
-        }
+          name: "Blinkit",
+        },
       },
     },
-    { resource: Models.Branch ,
+    {
+      resource: Models.Branch,
       options: {
         navigation: {
-          name: "Blinkit"
-        }
-      }
+          name: "Blinkit",
+        },
+      },
     },
-    { resource: Models.Product,
+    {
+      resource: Models.Product,
       options: {
         navigation: {
-          name: "Blinkit"
-        }
-      }
-     },
-    { resource: Models.Category,
-      options : {
-      navigation: {
-          name: "Blinkit"
-        }
-      }
-     },
-    { resource: Models.Order,
+          name: "Blinkit",
+        },
+      },
+    },
+    {
+      resource: Models.Category,
       options: {
         navigation: {
-        name: "Blinkit"
-      }
-    }
-     },
-    { resource: Models.Counter,
-      options:{
+          name: "Blinkit",
+        },
+      },
+    },
+    {
+      resource: Models.Order,
+      options: {
         navigation: {
-        name: "Blinkit"
-      }
-    }
-     },
+          name: "Blinkit",
+        },
+      },
+    },
+    {
+      resource: Models.Counter,
+      options: {
+        navigation: {
+          name: "Blinkit",
+        },
+      },
+    },
   ],
 
   branding: {
@@ -99,10 +104,10 @@ export const buildAdimRouter = async (app) => {
     app,
     {
       store: sessionStorage,
-      saveUnintalized: true,
+      saveUninitialized: true,
       cookie: {
-        httpOnly: (process.env.NODE_ENV = "production"),
-        secure: (process.env.NODE_ENV = "production"),
+        httpOnly: process.env.NODE_ENV === "production",
+        secure: process.env.NODE_ENV === "production",
       },
     }
   );
